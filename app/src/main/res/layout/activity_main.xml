@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+     <variable
+         name="viewModel"
+         type="com.example.singleliveeventsample.ObserverViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/button_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="navigate using livedata"
+            android:onClick="@{() -> viewModel.setLiveDataNavigation(true)}"
+            app:layout_constraintBottom_toTopOf="@id/button_two"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="navigate using SingleLiveEvent"
+            android:onClick="@{() -> viewModel.setSingleLiveEventNavigation(true)}"
+            app:layout_constraintBottom_toTopOf="@id/button_three"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/button_one" />
+
+        <Button
+            android:id="@+id/button_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="toast using SingleLiveEvent"
+            android:onClick="@{() -> viewModel.setSingleLiveEventToast(true)}"
+            app:layout_constraintBottom_toTopOf="@id/button_four"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/button_two" />
+
+        <Button
+            android:id="@+id/button_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="toast using live data"
+            android:onClick="@{() -> viewModel.setLiveDataToast(true)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/button_three" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
