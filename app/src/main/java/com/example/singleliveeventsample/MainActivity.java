@@ -21,7 +21,24 @@ public class MainActivity extends AppCompatActivity {
 
         ObserverViewModel viewModel = ViewModelProviders.of(this).get(ObserverViewModel.class);
         binding.setViewModel(viewModel);
+        viewModel.getEventNavigation().observe(this, new EventObserver<>(new EventHandler<Object>() {
 
+            @Override
+            public void onEventUnHandled(Object object) {
+                Intent intent = new Intent(MainActivity.this,EventWrapperActivity.class);
+                startActivity(intent);
+                Log.d("tag","event wrapper: intent trigger ");
+            }
+        }));
+
+        viewModel.getEventToast().observe(this, new EventObserver<>(new EventHandler<Object>() {
+
+            @Override
+            public void onEventUnHandled(Object object) {
+                Toast.makeText(MainActivity.this,"event wrapper toast",Toast.LENGTH_SHORT).show();
+
+            }
+        }));
         viewModel.getLiveDataNavigation().observe(this, new Observer<Boolean>() {
                     @Override
                     public void onChanged(Boolean isCLicked) {

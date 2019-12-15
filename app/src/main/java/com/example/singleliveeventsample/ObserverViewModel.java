@@ -9,6 +9,16 @@ public class ObserverViewModel extends ViewModel {
     private MutableLiveData<Boolean> liveDataToast = new MutableLiveData<>();
     private SingleLiveEvent<Boolean> singleLiveEventToast = new SingleLiveEvent<>();
     private SingleLiveEvent<Boolean> singleLiveEventNavigation = new SingleLiveEvent<>();
+    private MutableLiveData<Event<Object>> eventToast = new MutableLiveData<>();
+    private MutableLiveData<Event<Object>> eventNavigation = new SingleLiveEvent<>();
+
+    public MutableLiveData<Event<Object>> getEventToast() {
+        return eventToast;
+    }
+
+    public MutableLiveData<Event<Object>> getEventNavigation() {
+        return eventNavigation;
+    }
 
     public MutableLiveData<Boolean> getLiveDataToast() {
         return liveDataToast;
@@ -41,6 +51,13 @@ public class ObserverViewModel extends ViewModel {
 
     public void setLiveDataNavigation(Boolean liveDataNavigation) {
         this.liveDataNavigation.setValue(liveDataNavigation);
+    }
+
+    public void onNavigateUsingEvent(){
+        eventNavigation.setValue(new Event<>(new Object()));
+    }
+    public void displayToastUsingEvent(){
+        eventToast.setValue(new Event<>(new Object()));
     }
 
 }
