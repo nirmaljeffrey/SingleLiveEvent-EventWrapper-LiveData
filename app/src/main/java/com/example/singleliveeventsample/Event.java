@@ -28,4 +28,8 @@ public class Event<T> {
     public boolean hasBeenHandled() {
         return hasBeenHandled;
     }
+
+    public T peekContent(){
+        return mContent;
+    }
 }
