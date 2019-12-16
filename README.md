@@ -155,6 +155,7 @@ public class FragmentViewModel extends ViewModel {
     }
 }
 ```
+Sample code in XML for calling displayToastUsingEvent() method from viewModel
 ```xml
 ...
  <Button
