@@ -178,4 +178,4 @@ Sample code in XML for calling displayToastUsingEvent() method from viewModel
 ### References:
 - [POC](https://github.com/nirmaljeffrey/SingleLiveEvent-EventWrapper-LiveData "POC")
 - [https://medium.com/androiddevelopers/livedata-with-snackbar-navigation-and-other-events-the-singleliveevent-case-ac2622673150](https://medium.com/androiddevelopers/livedata-with-snackbar-navigation-and-other-events-the-singleliveevent-case-ac2622673150)
--[Architecture samples from google](https://github.com/android/architecture-samples/tree/todo-mvvm-live/todoapp/app/src/main/java/com/example/android/architecture/blueprints/todoapp)
+- [Architecture samples from google](https://github.com/android/architecture-samples/tree/todo-mvvm-live/todoapp/app/src/main/java/com/example/android/architecture/blueprints/todoapp)
