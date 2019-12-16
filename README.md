@@ -122,6 +122,12 @@ public class EventObserver<T> implements Observer<Event<T>> {
     }
 }
 ```
+EventHandler interface used in EventObserver class.
+```java
+public interface EventHandler<V>{
+    void onEventUnHandled(V object);
+}
+```
 ##### Usage:
 Sample code for observing events in fragment or activity.
 ```java
