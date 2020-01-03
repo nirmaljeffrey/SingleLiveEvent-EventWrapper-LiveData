@@ -3,7 +3,7 @@
 ### LiveData:
 LiveData is an observable data holder class. Unlike a regular observable, LiveData is lifecycle-aware, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures LiveData only updates app component observers that are in an active lifecycle state.
 Read about about advatages of liveData from the [documentation](https://developer.android.com/topic/libraries/architecture/livedata "documentation").   I list them here by the way:
-### Advantages of LIvedata:
+### Advantages of Livedata:
 
 >  #### Ensures your UI matches your data state 
 > LiveData follows the observer pattern. LiveData notifies Observer objects when the lifecycle state changes. You can consolidate your code to update the UI in these Observer objects. Instead of updating the UI every time the app data changes, your observer can update the UI every time there's a change.
